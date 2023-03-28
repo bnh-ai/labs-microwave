@@ -6,11 +6,11 @@ Microwave is a Jupyter notebook designed to help companies comply with the audit
 
 If you are not familiar with Python, Jupyter, and virtual environments, consider using our freely available web-based Microwave example available [here](https://colab.research.google.com/github/bnh-ai/labs-microwave/blob/main/colab/Microwave.ipynb).
 
-The freely available web-based Microwave example relies on Google Colab and Workspaces. If you would like to try the example, but do not have a Gmail address or Google Workspace account, you may follow instructions to create an account for free [here](https://support.google.com/accounts/answer/27441?hl=en). Log into the new account; then access the freely available web-based example link above.
+The freely available web-based Microwave example relies on Google Colab and Workspaces, which require you to be logged into your Google account. If you would like to try the example, but do not have a Google account, you may follow instructions to create an account for free [here](https://support.google.com/accounts/answer/27441?hl=en). Once you are logged into your Google account, you may access the freely available web-based example at the link above. If you are prompted with a warning that "This notebook was not authored by Google," click "Run anyway" to continue to the Colab notebook.
 
 ### Local installation
 
-For users who are familiar with Python, Jupyter, and virtual environments and plan to install the Microwave notebook locally, please follow the installation and usage instructions below or in `Microwave_v1.23.1_documentation.pdf` which is available in the docs folder or by clicking on "Documentation for v1.23.1 of the notebook can be accessed here" from the [Luminos portal](https://luminos.ai). **The installation steps below are required for the notebook to function properly.**
+For users who are familiar with Python, Jupyter, and virtual environments and plan to install the Microwave notebook locally, please follow the installation and usage instructions below or in `Microwave_Documentation.pdf` which is available in the docs folder or by clicking on "Documentation for v1.23.1 of the notebook can be accessed here" from the [Luminos portal](https://luminos.ai). **The installation steps below are required for the notebook to function properly.**
 
 **Basic install instructions**:
 
@@ -24,7 +24,7 @@ For users who are familiar with Python, Jupyter, and virtual environments and pl
     * Open a PowerShell window. Change directories into the unzipped folder.
     * Change directories into the scripts folder: `cd scripts`
     * To start the notebook (for the first time and in the future), run: `.\Setup.ps1` (You may need to enable PowerShell scripts to run and to unblock `Setup.ps1`: `PowerShell -ExecutionPolicy Bypass -File Setup.ps1`)
-* Running the setup script should install a virtual environment based on `requirements.txt`, start a Jupyter notebook server, and open a browser tab.
+* Running the setup script should install a virtual Python environment based on `requirements.txt`, start a Jupyter notebook server, and open a browser tab.
 * In that browser tab, click on `microwave`, then `Microwave.ipynb`.
   * The setup should sign the notebook so that it is trusted by Jupyter, but if Jupyter indicates the notebook is not trusted, click on `Not Trusted`, then click on `Trust`.
 * Click on: `Kernel`. Then click on: `Restart & Run All`.
@@ -45,7 +45,7 @@ For users who are familiar with Python, Jupyter, and virtual environments and pl
 │   ├── sample_candidate_scoring_data.csv
 │   └── sample_candidate_selection_data.csv
 ├── docs
-│   └── Microwave_v1.23.1_documentation.pdf
+│   └── Microwave_Documentation.pdf
 ├── jupyter_config
 │   └── jupyter_notebook_config.py
 ├── microwave
