@@ -2,7 +2,7 @@
 
 Microwave is a Jupyter notebook designed to help companies comply with the auditing requirements of New York City’s Local Law 144. Specifically, Microwave performs the bias tests on model outputs required by the law, as specified by the municipal Department of Consumer and Worker Protection’s December 2022 proposed rules available [here](https://rules.cityofnewyork.us/wp-content/uploads/2022/12/DCWP-NOH-AEDTs-1.pdf). Read the instructions below to learn more about using the Microwave notebook.
 
-### Freely available web-based example
+### Freely available cloud-based example
 
 If you are not familiar with Python, Jupyter, and virtual environments, consider using our freely available cloud-based Microwave example available [here](https://colab.research.google.com/github/bnh-ai/labs-microwave/blob/main/colab/Microwave.ipynb), which requires no installation.
 
