@@ -6,7 +6,7 @@ Microwave is a Jupyter notebook designed to help companies comply with the audit
 
 If you are not familiar with Python, Jupyter, and virtual environments, consider using our freely available cloud-based Microwave example available [here](https://colab.research.google.com/github/bnh-ai/labs-microwave/blob/main/colab/Microwave.ipynb), which requires no installation.
 
-The freely available cloud-based Microwave example relies on Google Colab and Workspaces, which require you to be logged into your Google account. If you would like to try the example, but do not have a Google account, you may follow instructions to create an account for free [here](https://support.google.com/accounts/answer/27441?hl=en). Once you are logged into your Google account, you may access the freely available web-based example at the link above. If you are prompted with a warning that "This notebook was not authored by Google," click "Run anyway" to continue to the Colab notebook.
+The freely available cloud-based Microwave example relies on Google Colab and Workspaces, which require you to be logged into your Google account. If you would like to try the example, but do not have a Google account, you may follow instructions to create an account for free [here](https://support.google.com/accounts/answer/27441?hl=en). Once you are logged into your Google account, you may access the freely available cloud-based example at the link above. If you are prompted with a warning that "This notebook was not authored by Google," click "Run anyway" to continue to the Colab notebook.
 
 ### Local installation
 
