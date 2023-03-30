@@ -1,9 +1,5 @@
 #!/bin/bash
 
-################################################################################
-# This setup script performs the following commands
-################################################################################
-
 function error() {
     echo " " >&2
     echo "Error: $1.  Please contact BNH.AI customer support at luminos@bnh.ai if you need assistance resolving this error." >&2
