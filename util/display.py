@@ -27,7 +27,7 @@ from ipywidgets import __version__ as ipywidgets_version
 from util.bias_testing import BiasTester
 from util.exceptions import html_error_message
 
-VERSION = 'Microwave-1.23.1-20230327-rc5'
+VERSION = 'Microwave-1.23.1-20230331-rc6'
 COLAB = 'google.colab' in str(get_ipython())
 GITHUB = "labs-microwave"
 
@@ -327,20 +327,20 @@ class JupyterFormManager(object):
         ]
 
         if self.model_output_label is None:
-            raise Exception(f"No selection was made for the variable used to store the model output")
+            raise Exception("No selection was made for the variable used to store the model output")
         if not is_numeric_dtype(self.dataset[self.model_output_label]):
-            raise Exception(f"The variable used to store the model output should be a numeric variable but is of type {self.dataset.dtypes[self.model_output_label]}")
+            raise Exception(f"The variable '{self.model_output_label}' used to store the model output should be a numeric variable but is of type '{self.dataset.dtypes[self.model_output_label]}'")
 
         model_output_nulls = self.dataset[self.dataset[self.model_output_label].isna()].shape[0]
         if model_output_nulls > 0:
-            raise Exception(f"The dataset should not contain nulls, but there appear to be {model_output_nulls} null values for {self.model_output_label}")
+            raise Exception(f"The dataset should not contain nulls, but there appear to be {model_output_nulls} null values for '{self.model_output_label}'")
 
         unique_values = sorted(self.dataset[self.model_output_label].unique())
         if len(unique_values) < 2:
-            raise Exception(f"There were only {len(unique_values)} values found for the {self.model_output_label} variable")
+            raise Exception(f"There were only {len(unique_values)} values found for the '{self.model_output_label}' variable")
         elif len(unique_values) == 2:
             if unique_values[0] != 0 or unique_values[1] != 1:
-                raise Exception(f"The values of the {self.model_output_label} variable appear to be binary, but take on values {unique_values[0]} and {unique_values[1]} (rather than 0 and 1)")
+                raise Exception(f"The values of the '{self.model_output_label}' variable appear to be binary, but take on values {unique_values[0]} and {unique_values[1]} (rather than 0 and 1)")
             self.output_type = "binary"
         else:
             self.output_type = "continuous"
@@ -349,25 +349,30 @@ class JupyterFormManager(object):
             minimum = self.dataset[self.model_output_label].min()
             maximum = self.dataset[self.model_output_label].max()
             if maximum - minimum < 1e-4:
-                raise Exception(f"The values of the {self.model_output_label} variable appear to be continuous, but the maximum and minimum values ({maximum} and {minimum}) are effectively the same")
+                raise Exception(f"The values of the '{self.model_output_label}' variable appear to be continuous, but the maximum and minimum values ({maximum} and {minimum}) are effectively the same")
+
+        if self.model_output_label in self.race_labels:
+            raise Exception(f"The variable '{self.model_output_label}' used to store the model output cannot be also be a race indicator")
+        if self.model_output_label in self.gender_labels:
+            raise Exception(f"The variable '{self.model_output_label}' used to store the model output cannot be also be a sex indicator")
 
         if len(self.race_labels) < 2:
-            raise Exception(f"At least two variables corresponding to race must be identified")
+            raise Exception("At least two variables corresponding to race must be identified")
         if len(self.gender_labels) < 2:
-            raise Exception(f"At least two variables corresponding to sex must be identified")
+            raise Exception("At least two variables corresponding to sex must be identified")
         for label in self.race_labels + self.gender_labels:
             unique_values = sorted(self.dataset[label].unique())
             if len(unique_values) == 2:
                 if unique_values[0] != 0 or unique_values[1] != 1:
-                    raise Exception(f"The values of the {label} variable appear to be binary, but take on values {unique_values[0]} and {unique_values[1]} (rather than 0 and 1)")
+                    raise Exception(f"The values of the '{label}' variable appear to be binary, but take on values {unique_values[0]} and {unique_values[1]} (rather than 0 and 1)")
             else:
-                raise Exception(f"The values of the demographic variable {label} should be a binary variable with values of 0 and 1 indicating category membership, but contains {len(unique_values)} unique values")
+                raise Exception(f"The values of the demographic variable '{label}' should be a binary variable with values of 0 and 1 indicating category membership, but contains {len(unique_values)} unique values")
         for label in self.race_labels:
             if label in self.gender_labels:
-                raise Exception(f"The indicator {label} cannot be both a race and sex indicator")
+                raise Exception(f"The indicator '{label}' cannot be both a race and sex indicator")
         for label in self.gender_labels:
             if label in self.race_labels:
-                raise Exception(f"The indicator {label} cannot be both a race and sex indicator")
+                raise Exception(f"The indicator '{label}' cannot be both a race and sex indicator")
 
         return True
 
