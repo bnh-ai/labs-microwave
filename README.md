@@ -1,6 +1,6 @@
 ## Microwave Bias Calculator for New York City Local Law 144
 
-Microwave is a Jupyter notebook designed to help companies comply with the auditing requirements of New York City's Local Law 144. Specifically, Microwave performs the bias tests on model outputs required by the law, as specified by the municipal Department of Consumer and Worker Protection's April 2023 Notice of Adoption of Final Rules (available [here](https://rules.cityofnewyork.us/wp-content/uploads/2023/04/DCWP-NOA-for-Use-of-Automated-Employment-Decisionmaking-Tools-2.pdf)) that has an effective date of July 5, 2023.
+Microwave is a Jupyter notebook designed to help companies comply with the auditing requirements of New York City's Local Law 144. Specifically, Microwave performs the bias tests on model outputs required by the law, as specified by the municipal Department of Consumer and Worker Protection's April 2023 Notice of Adoption of Final Rule (available [here](https://rules.cityofnewyork.us/wp-content/uploads/2023/04/DCWP-NOA-for-Use-of-Automated-Employment-Decisionmaking-Tools-2.pdf)) that has an effective date of July 5, 2023.
 
 Read the instructions below to learn more about using the Microwave notebook.
 
