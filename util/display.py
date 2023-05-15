@@ -11,6 +11,7 @@
 # relationship with BNH.AI.                                                    #
 ################################################################################
 
+import os
 from sys import getsizeof
 from io import BytesIO
 import time
@@ -27,7 +28,7 @@ from ipywidgets import __version__ as ipywidgets_version
 from util.bias_testing import BiasTester
 from util.exceptions import html_error_message
 
-VERSION = 'Microwave-1.23.1-20230331-rc6'
+VERSION = 'Microwave-1.23.1-20230515-rc8'
 COLAB = 'google.colab' in str(get_ipython())
 GITHUB = "labs-microwave"
 
@@ -46,7 +47,6 @@ class JupyterFormManager(object):
                 IPython.OutputArea.prototype._should_scroll = function(lines) {
                     return false;
                 }
-                // Disable the autosave to minimize potential for caching issues
                 IPython.notebook.set_autosave_interval(0);
             """
             display(Javascript(javascript_string))
@@ -244,9 +244,9 @@ class JupyterFormManager(object):
                 else:
                     raise Exception(f"Button description {description} not recognized")
                 if COLAB:
-                    self.dataset_filename = f"./{GITHUB}/data/{filename}"
+                    self.dataset_filename = f".{os.sep}{GITHUB}{os.sep}data{os.sep}{filename}"
                 else:
-                    self.dataset_filename = f"../data/{filename}"
+                    self.dataset_filename = f"..{os.sep}data{os.sep}{filename}"
                 with self.widgets['file_upload_message_context']:
                     display(HTML("<br><br>"))
                     display(HTML(f"<p><i>Parsing contents of file '{filename}'</i></p>"))
@@ -600,5 +600,5 @@ class JupyterFormManager(object):
             self.widgets['test_output_context'].clear_output()
             self.widgets['message_context'].clear_output()
             with self.widgets['message_context']:
-                display(HTML(html_error_message(exception=e, stack_trace=self.verbose, context=f"Unable to render user input Jupyter widgets based on file {self.dataset_filename}")))
+                display(HTML(html_error_message(exception=e, stack_trace=self.verbose, context=f"Unable to render test results based on file {self.dataset_filename}")))
 

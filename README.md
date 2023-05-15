@@ -1,6 +1,6 @@
 ## Microwave Bias Calculator for New York City Local Law 144
 
-Microwave is a Jupyter notebook designed to help companies comply with the auditing requirements of New York City’s Local Law 144. Specifically, Microwave performs the bias tests on model outputs required by the law, as specified by the municipal Department of Consumer and Worker Protection’s December 2022 proposed rules available [here](https://rules.cityofnewyork.us/wp-content/uploads/2022/12/DCWP-NOH-AEDTs-1.pdf). Note that a Notice of Adoption of Final Rule was released [here](https://rules.cityofnewyork.us/wp-content/uploads/2023/04/DCWP-NOA-for-Use-of-Automated-Employment-Decisionmaking-Tools-2.pdf) on April 6, 2023 and is currently under review.  This notebook will be updated to reflect any changes relative to the December 2022 proposed rules following our review.
+Microwave is a Jupyter notebook designed to help companies comply with the auditing requirements of New York City's Local Law 144. Specifically, Microwave performs the bias tests on model outputs required by the law, as specified by the municipal Department of Consumer and Worker Protection's April 2023 Notice of Adoption of Final Rules (available [here](https://rules.cityofnewyork.us/wp-content/uploads/2023/04/DCWP-NOA-for-Use-of-Automated-Employment-Decisionmaking-Tools-2.pdf)) that has an effective date of July 5, 2023.
 
 Read the instructions below to learn more about using the Microwave notebook.
 
@@ -25,7 +25,7 @@ For users who are familiar with Python, Jupyter, and virtual environments and pl
   * On Windows: 
     * Open a PowerShell window. Change directories into the unzipped folder.
     * Change directories into the scripts folder: `cd scripts`
-    * To start the notebook (for the first time and in the future), run: `.\Setup.ps1` (You may need to enable PowerShell scripts to run and to unblock `Setup.ps1`: `PowerShell -ExecutionPolicy Bypass -File Setup.ps1`)
+    * To start the notebook (for the first time and in the future), run: `.\Setup.ps1` (You may need to enable PowerShell scripts to run and to unblock `Setup.ps1` with the command `PowerShell -ExecutionPolicy Bypass -File Setup.ps1`)
 * Running the setup script should install a virtual Python environment based on `requirements.txt`, start a Jupyter notebook server, and open a browser tab.
 * In that browser tab, click on `microwave`, then `Microwave.ipynb`.
   * The setup should sign the notebook so that it is trusted by Jupyter, but if Jupyter indicates the notebook is not trusted, click on `Not Trusted`, then click on `Trust`.

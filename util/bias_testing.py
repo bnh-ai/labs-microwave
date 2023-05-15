@@ -215,11 +215,11 @@ class BiasTester(object):
 
         elif self.output_type == 'continuous':
 
-            formatted_results_table.drop(columns=['N(Cat)'], inplace=True)
             formatted_results_table.drop(columns=['MedPos(Cat)'], inplace=True)
             column_aliases = {
-                "MedP(Cat)": "Scoring Rate<br><small>[A]</small>", 
-                "NYC AIR": "Impact Ratio<br><small>[A]/max([A])</small>"
+                "N(Cat)": "# of Applicants<br><small>[A]</small>",
+                "MedP(Cat)": "Scoring Rate<br><small>[B]</small>",
+                "NYC AIR": "Impact Ratio<br><small>[B]/max([B])</small>"
             }
             for column in column_aliases:
                 if column in results_table.columns:
