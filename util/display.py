@@ -165,7 +165,7 @@ class JupyterFormManager(object):
 
         html_string += """
             <p>
-                Note that the proposed law requires testing across the categories of race/ethnicity and sex category, 
+                Note that the law requires testing across the categories of race/ethnicity and sex category, 
                 as well as intersectional categories for both.  If you upload a dataset of your own, 
                 it must meet the following criteria: 
             </p>
@@ -501,7 +501,7 @@ class JupyterFormManager(object):
                     outcomes for different demographic categories.  
                     <br><br>
                     This AIR calculation is performed for each demographic category consistently with that described in 
-                    the Department of Consumer and Worker Protection December 2022 proposed rules, based on 
+                    the Department of Consumer and Worker Protection April 2023 Notice of Adoption of Final Rule, based on 
                     the output of a model that selects employees or candidates (i.e., a binary classifier).
                     <br><br>
                     The selection rate (<b>Selection Rate</b>) in each demographic category, which reflects the number selected 
@@ -531,7 +531,7 @@ class JupyterFormManager(object):
                     <br><br>
                     This AIR calculation is performed for each demographic
                     category consistently with the Department of Consumer and
-                    Worker Protection December 2022 proposed rules, based on the
+                    Worker Protection April 2023 Notice of Adoption of Final Rule, based on the
                     output of a model that generates scores (i.e., a regression model). 
                     <br><br>
                     The scoring rate (<b>Scoring Rate</b>) in each demographic
