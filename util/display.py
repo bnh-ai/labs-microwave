@@ -28,7 +28,7 @@ from ipywidgets import __version__ as ipywidgets_version
 from util.bias_testing import BiasTester
 from util.exceptions import html_error_message
 
-VERSION = 'Microwave-1.23.1-20230515-rc8'
+VERSION = 'Microwave-1.23.1-20230719-rc9'
 COLAB = 'google.colab' in str(get_ipython())
 GITHUB = "labs-microwave"
 
