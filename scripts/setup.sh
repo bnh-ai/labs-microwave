@@ -2,7 +2,7 @@
 
 function error() {
     echo " " >&2
-    echo "Error: $1.  Please contact BNH.AI customer support at luminos@bnh.ai if you need assistance resolving this error." >&2
+    echo "Error: $1.  Please contact Luminos.Law customer support at support@luminos.law if you need assistance resolving this error." >&2
     echo " " >&2
     exit 1
 }

@@ -8,7 +8,7 @@
 #                                                                              #
 # The information provided by this notebook does not contain specific legal    #
 # advice and use of this information does not create an attorney-client        #
-# relationship with BNH.AI.                                                    #
+# relationship with Luminos.Law.                                               #
 ################################################################################
 
 import sys

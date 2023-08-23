@@ -63,7 +63,7 @@ try {
 	Write-Host " "
 	Write-Host "An error occurred trying to install the notebook: " $_
 	Write-Host " "
-    Write-Host "Please contact BNH.AI customer support at luminos@bnh.ai if you need assistance resolving this error."
+    Write-Host "Please contact Luminos.Law customer support at support@luminos.law if you need assistance resolving this error."
 	Write-Host " "
 
 } finally {

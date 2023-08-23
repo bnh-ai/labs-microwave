@@ -8,7 +8,7 @@
 #                                                                              #
 # The information provided by this notebook does not contain specific legal    #
 # advice and use of this information does not create an attorney-client        #
-# relationship with BNH.AI.                                                    #
+# relationship with Luminos.Law.                                               #
 ################################################################################
 
 import os
@@ -28,7 +28,7 @@ from ipywidgets import __version__ as ipywidgets_version
 from util.bias_testing import BiasTester
 from util.exceptions import html_error_message
 
-VERSION = 'Microwave-1.23.1-20230719-rc9'
+VERSION = 'Microwave-1.23.1-202300802-rc10'
 COLAB = 'google.colab' in str(get_ipython())
 GITHUB = "labs-microwave"
 
@@ -53,7 +53,7 @@ class JupyterFormManager(object):
 
         self.popup_message = """
             require(
-                ["base/js/dialog"], 
+                ["base/js/dialog"],
                 function(dialog) {
                     dialog.modal({
                         title: '$title',
@@ -66,14 +66,14 @@ class JupyterFormManager(object):
         """
 
         self.html_label = """
-            <div style="height:50px; font-weight:bold"> 
+            <div style="height:50px; font-weight:bold">
                 <p>%s</p>
-            </div> 
+            </div>
         """
         self.html_label_tall = """
-            <div style="height:100px; font-weight:bold"> 
+            <div style="height:100px; font-weight:bold">
                 <p>%s</p>
-            </div> 
+            </div>
         """
 
         self.widgets = {}
@@ -98,7 +98,7 @@ class JupyterFormManager(object):
 
             <style>
                 .blue_button {{
-                  background-color: #004F9D; 
+                  background-color: #004F9D;
                   border: none;
                   margin-top: 30px;
                   margin-left: 30px;
@@ -112,7 +112,7 @@ class JupyterFormManager(object):
                   width : 250px
                 }}
                 .bold_label {{
-                  font-size : 14px; 
+                  font-size : 14px;
                   font-weight : bold;
                   margin-left : {margin_left};
                 }}
@@ -120,7 +120,7 @@ class JupyterFormManager(object):
                 #T_nyc_air_intersectional_test {{margin-left: auto; margin-right: auto;}}
             </style>
 
-            <br> 
+            <br>
 
         """
 
@@ -131,18 +131,18 @@ class JupyterFormManager(object):
                 Please click on one of the buttons below to select a dataset for analysis.
             </p>
 
-            <br> 
+            <br>
 
             <p>
-                You may provide your own sample data or use a synthetic 
-                <a href="javascript:void(0);" onclick="window.open('https://github.com/bnh-ai/{GITHUB}/tree/main/data','_blank');">sample dataset</a> 
-                provided by <a href="javascript:void(0);" onclick="window.open('https://bnh.ai','_blank');">BNH.AI</a> for testing purposes.  
-                To use your own sample data, click on the "Upload" button below.  To use a synthetic sample dataset provided by 
-                <a href="javascript:void(0);" onclick="window.open('https://bnh.ai','_blank');">BNH.AI</a> for testing purposes, 
+                You may provide your own sample data or use a synthetic
+                <a href="javascript:void(0);" onclick="window.open('https://github.com/bnh-ai/{GITHUB}/tree/main/data','_blank');">sample dataset</a>
+                provided by <a href="javascript:void(0);" onclick="window.open('https://luminos.law','_blank');">Luminos.Law</a> for testing purposes.
+                To use your own sample data, click on the "Upload" button below.  To use a synthetic sample dataset provided by
+                <a href="javascript:void(0);" onclick="window.open('https://luminos.law','_blank');">Luminos.Law</a> for testing purposes,
                 click on either the "Use Sample Selection Data" or "Use Sample Scoring Data" button.
             </p>
 
-            <br> 
+            <br>
 
             """
         else:
@@ -152,22 +152,22 @@ class JupyterFormManager(object):
                 Please click on the "Upload" button below to upload a dataset for analysis.
             </p>
 
-            <br> 
+            <br>
 
             <p>
-                You may provide your own sample data or use a synthetic sample dataset located in the <tt>data</tt> folder included in this distribution 
-                which has been provided by <a href="javascript:void(0);" onclick="window.open('https://bnh.ai','_blank');">BNH.AI</a> for testing purposes.
+                You may provide your own sample data or use a synthetic sample dataset located in the <tt>data</tt> folder included in this distribution
+                which has been provided by <a href="javascript:void(0);" onclick="window.open('https://luminos.law','_blank');">Luminos.Law</a> for testing purposes.
             </p>
 
-            <br> 
+            <br>
 
             """
 
         html_string += """
             <p>
-                Note that the law requires testing across the categories of race/ethnicity and sex category, 
-                as well as intersectional categories for both.  If you upload a dataset of your own, 
-                it must meet the following criteria: 
+                Note that the law requires testing across the categories of race/ethnicity and sex category,
+                as well as intersectional categories for both.  If you upload a dataset of your own,
+                it must meet the following criteria:
             </p>
 
             <p>
@@ -175,8 +175,8 @@ class JupyterFormManager(object):
                     <li>The dataset must be in the form of a CSV file.
                     <li>The variable which contains the model output must either be a binary variable containing the value 0 or 1 (reflecting a binary classification model used for the selection of employees or candidates) or be continuously valued (reflecting a regression model used for scoring employees or candidates).
                     <ul>
-                        <li>A variable encoding selection should use the value 1 to reflect selection (and 0 otherwise). 
-                        <li>Increasing values of a variable encoding scoring are assumed to reflect more favorable results. 
+                        <li>A variable encoding selection should use the value 1 to reflect selection (and 0 otherwise).
+                        <li>Increasing values of a variable encoding scoring are assumed to reflect more favorable results.
                     </ul>
                     <li>The dataset must contain at least 100, but no more than 10,000, observations and be no greater than 10 MB in size.
                     <li>There must be at least two binary demographic variables that are indicators of race/ethnicity which encode demographic category membership with a value of 1 reflecting category membership (and 0 otherwise).
@@ -185,7 +185,7 @@ class JupyterFormManager(object):
                 </ul>
             </p>
 
-            <br> 
+            <br>
 
             """
 
@@ -310,7 +310,7 @@ class JupyterFormManager(object):
             with self.widgets['message_context']:
                 display(HTML(html_error_message(exception=e, stack_trace=self.verbose, context=f"Unable to retrieve data from file '{self.dataset_filename}'")))
 
-    def validate_input(self): 
+    def validate_input(self):
 
         self.columns = self.dataset.columns.values.tolist()
 
@@ -376,7 +376,7 @@ class JupyterFormManager(object):
 
         return True
 
-    def display_dataset_widgets(self): 
+    def display_dataset_widgets(self):
 
         try:
 
@@ -433,7 +433,7 @@ class JupyterFormManager(object):
 
             self.widgets['run_tests_button'] = Button(description='Run Tests')
             self.widgets['run_tests_button'].add_class('blue_button')
-            self.widgets['run_tests_button'].on_click(self.nyc_air_test)        
+            self.widgets['run_tests_button'].on_click(self.nyc_air_test)
             with self.widgets['run_test_button_context']:
                 display(self.widgets['run_tests_button'])
 
@@ -480,7 +480,7 @@ class JupyterFormManager(object):
 
             category_style = tester.format_results_table(results_table=category_results, categorization="category").style
             intersectional_style = tester.format_results_table(results_table=intersectional_results, categorization="intersectional").style
-            
+
             for style in [category_style, intersectional_style]:
                 style.set_table_styles( [ { 'selector': 'th', 'props': [('text-align', 'center')] } ] )
                 style.format(formatter=None, precision=2, na_rep='<a href="javascript:void(0);" onclick="alert(\'This value could not be calculated because it would have produced a divide by zero error or otherwise generated an undefined value.\'); return false;">N/A</a>')
@@ -497,15 +497,15 @@ class JupyterFormManager(object):
                     <br><br>
                     <b>NYC DCWP Adverse Impact Ratio Category-Level Test</b>
                     <br><br>
-                    Adverse Impact Ratio (AIR) tests attempt to measure the relative rates of positive 
-                    outcomes for different demographic categories.  
+                    Adverse Impact Ratio (AIR) tests attempt to measure the relative rates of positive
+                    outcomes for different demographic categories.
                     <br><br>
-                    This AIR calculation is performed for each demographic category consistently with that described in 
-                    the Department of Consumer and Worker Protection April 2023 Notice of Adoption of Final Rule, based on 
+                    This AIR calculation is performed for each demographic category consistently with that described in
+                    the Department of Consumer and Worker Protection April 2023 Notice of Adoption of Final Rule, based on
                     the output of a model that selects employees or candidates (i.e., a binary classifier).
                     <br><br>
-                    The selection rate (<b>Selection Rate</b>) in each demographic category, which reflects the number selected 
-                    (<b># Selected</b>) relative to the total number in the category (<b># of Applicants</b>), is compared with the highest rate across 
+                    The selection rate (<b>Selection Rate</b>) in each demographic category, which reflects the number selected
+                    (<b># Selected</b>) relative to the total number in the category (<b># of Applicants</b>), is compared with the highest rate across
                     categories in the demographic group (such as race/ethnicity or sex category).
                     <br><br>
                 """
@@ -526,19 +526,19 @@ class JupyterFormManager(object):
                     <br><br>
                     <b>NYC DCWP Adverse Impact Ratio (AIR) Category-Level Test</b>
                     <br><br>
-                    Adverse Impact Ratio (AIR) tests attempt to measure the relative rates of positive 
-                    outcomes for different demographic categories. 
+                    Adverse Impact Ratio (AIR) tests attempt to measure the relative rates of positive
+                    outcomes for different demographic categories.
                     <br><br>
                     This AIR calculation is performed for each demographic
                     category consistently with the Department of Consumer and
                     Worker Protection April 2023 Notice of Adoption of Final Rule, based on the
-                    output of a model that generates scores (i.e., a regression model). 
+                    output of a model that generates scores (i.e., a regression model).
                     <br><br>
                     The scoring rate (<b>Scoring Rate</b>) in each demographic
-                    category, which reflects the number with scores greater 
+                    category, which reflects the number with scores greater
                     than the overall median relative to the total number in the
                     category, is compared with the highest rate across
-                    categories in the demographic group (such as race/ethnicity or sex category). 
+                    categories in the demographic group (such as race/ethnicity or sex category).
                     <br><br>
                 """
 
@@ -565,9 +565,9 @@ class JupyterFormManager(object):
             concluding_message_html = f"""
             <br>
             <p style="font-weight:bold">
-                Please contact BNH.AI via <a href="mailto:luminos@bnh.ai">email</a> 
-                with additional questions, and visit 
-                <a href="javascript:void(0);" onclick="window.open('https://bnh.ai','_blank');">our website</a> 
+                Please contact Luminos.Law via <a href="mailto:support@luminos.law">email</a>
+                with additional questions, and visit
+                <a href="javascript:void(0);" onclick="window.open('https://luminos.law','_blank');">our website</a>
                 to learn more about how we perform audits to assess AI systems for risk.
             </p>
             <br>
