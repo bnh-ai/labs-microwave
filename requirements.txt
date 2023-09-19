@@ -18,3 +18,5 @@ python-docx
 pyzmq==24.0
 scipy
 scikit-learn
+traitlets<=5.9.0
+
